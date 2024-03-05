@@ -2,7 +2,7 @@ import sys
 
 import pygame as pg
 
-from setting import Settinger
+from settings import Settinger
 
 class AlienInvasion:
     '''for a handtere spillobjekter og bevegelse'''
