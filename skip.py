@@ -9,7 +9,7 @@ class Skip:
         self.skjerm_rect = ai_spill.skjerm.get_rect()
 
         # laste skipets bilde og få dens rect
-        self.image = pg.image.load('redfighter0005.png')
+        self.image = pg.image.load('redfighter0005.bmp')
         self.rect = self.image.get_rect()
 
         # start hvert nye skip på bunden og midten av skjermen
