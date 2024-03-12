@@ -5,7 +5,7 @@ class Skip:
     def __init__(self, ai_spill):
         """laste ned skipet og sette start posisjon på den"""
         self.skjerm = ai_spill.skjerm
-        self.settings = ai_spill.settings
+        self.settinger = ai_spill.settinger
         self.skjerm_rect = ai_spill.skjerm.get_rect()
 
         # laste skipets bilde og få dens rect
@@ -28,9 +28,9 @@ class Skip:
     def oppdatere(self):
         """oppdaterer skipets posisjon basert på en bevegelses flagg"""
         # oppdaterer skipets x verdi, ikke rect-en
-        if self.beveg_hoyre and self.rect.hoyre < self.skjerm_rect.right: # prøv også med "hoyre"
-            self.x += self.settings.skip_fart
+        if self.beveg_hoyre and self.rect.right < self.skjerm_rect.right: # prøv også med "hoyre"
+            self.x += self.settinger.skip_fart
             # self.rect.x += 1
         if self.beveg_venstre and self.rect.left > 0: # LEFT BLIR BLÅ MEN IKKE RIGHT?
-            self.x -= self.settings.skip_fart
+            self.x -= self.settinger.skip_fart
             #self.rect.x += -1
