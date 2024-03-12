@@ -27,13 +27,13 @@ class AlienInvasion:
         self.skudds = pg.sprite.Group()
 
         # bakgrunnsfarge
-        self.bakgrunn_farge = (200, 200, 200)
+        self.bg_farge = (200, 200, 200)
 
     def kjor_spill(self):
         '''starter en loop av spillet'''
         while True:
             self.sjekk_event()
-            self.skip.oppdater()
+            self.skip.oppdatere()
             self.oppdater_skjerm()
             self.oppdater_skudds()
             # FPS for spillet
@@ -41,16 +41,17 @@ class AlienInvasion:
 
     def oppdater_skjerm(self):
         # oppdatere skjermen
-        self.skjerm.fill(self.settinger.bakgrunn_farge)
+        self.skjerm.fill(self.settinger.bg_farge)
         for skudd in self.skudds.sprites():
             skudd.tegn_skudd()
         self.skip.blitme()
 
         pg.display.flip()
     
-    def oppdater_skudd(self):
+    def oppdater_skudds(self):
         "oppdaterer skuddets posisjon og fjerner skudd utenfor skjermen"
-        self.skudds.oppdater()
+        for skudd in self.skudds.sprites():
+            skudd.oppdatere()
                 
         # fjern skudd som er borte
         for skudd in self.skudds.copy():
@@ -73,6 +74,8 @@ class AlienInvasion:
     
     def sjekk_tastNed(self, event):
         # taste trykkes ned
+        if event.key == pg.K_ESCAPE:
+            sys.exit()
         if event.key == pg.K_RIGHT:
             # beveg skipet til hoyre
             self.skip.beveg_hoyre = True
