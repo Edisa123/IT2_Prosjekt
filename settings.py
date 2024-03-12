@@ -15,5 +15,5 @@ class Settinger:
         self.skudd_fart = 2.0
         self.skudd_bredde = 3
         self.skudd_hoyde = 15
-        self.skudd_farge = (60, 60, 60)
-        self.skudd_lov = 3
+        self.skudd_farge = (200, 200, 0)
+        self.skudd_lov = 10

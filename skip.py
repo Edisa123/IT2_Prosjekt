@@ -25,15 +25,13 @@ class Skip:
         """tegn skipet på sitt nåværende område"""
         self.skjerm.blit(self.image, self.rect)
         # bevegelse flagg; start mad skip som ikke beveger seg
-        self.beveg_hoyre = False
-        self.beveg_venstre = False
 
     def oppdatere(self):
         """oppdaterer skipets posisjon basert på en bevegelses flagg"""
         # oppdaterer skipets x verdi, ikke rect-en
         if self.beveg_hoyre and self.rect.right < self.skjerm_rect.right: # prøv også med "hoyre"
-            self.x += self.settinger.skip_fart
+            self.rect.x += self.settinger.skip_fart
             # self.rect.x += 1
         if self.beveg_venstre and self.rect.left > 0: # LEFT BLIR BLÅ MEN IKKE RIGHT?
-            self.x -= self.settinger.skip_fart
+            self.rect.x -= self.settinger.skip_fart
             #self.rect.x += -1
