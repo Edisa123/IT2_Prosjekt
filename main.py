@@ -1,5 +1,3 @@
-# side 244
-
 import sys
 
 import pygame as pg
@@ -11,7 +9,7 @@ from skudd import Skudd
 class AlienInvasion:
     '''for a handtere spillobjekter og bevegelse'''
 
-    def __init___(self):
+    def __init__(self):
         '''laste inn spill'''
         pg.init()
 
@@ -20,13 +18,13 @@ class AlienInvasion:
         self.settinger = Settinger()
 
         self.skjerm = pg.display.set_mode((0,0), pg.FULLSCREEN)
-        self.settings.skjerm_bredde = self.skjerm.get_rect().bredde
-        self.settings.skjerm_hoyde = self.skjerm.get_rect().hoyde
+        self.settinger.skjerm_bredde = self.skjerm.get_width()
+        self.settinger.skjerm_hoyde = self.skjerm.get_height()
         pg.display.set_caption('"Alien Invasion" Spill')
 
         # tilkalle skipsklassen
         self.skip = Skip(self)
-        self.skudd = pg.sprite.Group()
+        self.skudds = pg.sprite.Group()
 
         # bakgrunnsfarge
         self.bakgrunn_farge = (200, 200, 200)
@@ -99,15 +97,7 @@ class AlienInvasion:
             nytt_skudd = Skudd(self)
             self.skudds.add(nytt_skudd)
 
-
-
-
-
 if __name__ == '__main__':
     ''' kjor spillet'''
     ai = AlienInvasion()
     ai.kjor_spill()
-
-
-
-
