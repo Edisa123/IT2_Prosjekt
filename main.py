@@ -50,7 +50,8 @@ class AlienInvasion:
     
     def oppdater_skudds(self):
         "oppdaterer skuddets posisjon og fjerner skudd utenfor skjermen"
-        self.skudds.oppdatere()
+        for skudd in self.skudds.sprites():
+            skudd.oppdatere()
                 
         # fjern skudd som er borte
         for skudd in self.skudds.copy():
@@ -73,6 +74,8 @@ class AlienInvasion:
     
     def sjekk_tastNed(self, event):
         # taste trykkes ned
+        if event.key == pg.K_ESCAPE:
+            sys.exit()
         if event.key == pg.K_RIGHT:
             # beveg skipet til hoyre
             self.skip.beveg_hoyre = True
