@@ -6,7 +6,7 @@ class Settinger:
         # skjerm settinger
         self.skjerm_bredde = 1200
         self.skjerm_hoyde = 800
-        self.bg_farge = (230, 230, 230)
+        self.bg_farge = (0, 0, 0)
         
         # skip hastighet
         self.skip_fart = 1.5
