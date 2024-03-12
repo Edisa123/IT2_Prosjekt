@@ -9,7 +9,7 @@ class Skip:
         self.skjerm_rect = ai_spill.skjerm.get_rect()
 
         # laste skipets bilde og få dens rect
-        self.image = pg.image.load('images/ship.bmp') # KOMME TILBAKE TIL DET HER!!!
+        self.image = pg.image.load('redfighter0005.png')
         self.rect = self.image.get_rect()
 
         # start hvert nye skip på bunden og midten av skjermen
@@ -17,6 +17,9 @@ class Skip:
 
         # beholde en float for skipets horisontale posisjon
         self.x = float(self.rect.x)
+
+        self.beveg_hoyre = False
+        self.beveg_venstre = False
 
     def blitme(self):
         """tegn skipet på sitt nåværende område"""
